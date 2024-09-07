@@ -1,4 +1,17 @@
-# 🏗 Scaffold-ETH 2
+# 💸 Lottery dApp
+
+### Getting Started
+Running the frontend scaffold eth 2:
+```shell 
+git clone https://github.com/scaffold-eth/scaffold-eth-2.git
+```
+or
+```shell 
+npx create-eth@latest lottery-dapp
+cd lottery-dapp
+yarn install
+yarn start
+```
 
 <h4 align="center">
   <a href="https://docs.scaffoldeth.io">Documentation</a> |
