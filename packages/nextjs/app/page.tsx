@@ -2,6 +2,7 @@
 
 import type { NextPage } from "next";
 import { useAccount } from "wagmi";
+import { CheckLotteryState } from "~~/components/lottery/CheckLotteryState";
 import { DeployLottery } from "~~/components/lottery/DeployLottery";
 import { Address } from "~~/components/scaffold-eth";
 
@@ -21,6 +22,7 @@ const Home: NextPage = () => {
             <Address address={connectedAddress} />
           </div>
           <DeployLottery></DeployLottery>
+          <CheckLotteryState></CheckLotteryState>
         </div>
       </div>
     </>
