@@ -13,6 +13,15 @@ yarn install
 yarn start
 ```
 
+Created a lottery directory inside packages that houses the contracts
+```shell
+cd packages/lottery
+npx hardhat compile  
+```
+this will generate the artifacts folder that you can call in your scripts ie:
+import { abi } from "../artifacts/contracts/Lottery.sol/Lottery.json";
+
+
 <h4 align="center">
   <a href="https://docs.scaffoldeth.io">Documentation</a> |
   <a href="https://scaffoldeth.io">Website</a>
