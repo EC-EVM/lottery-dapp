@@ -4,6 +4,7 @@ import type { NextPage } from "next";
 import { useAccount } from "wagmi";
 import { CheckLotteryState } from "~~/components/lottery/CheckLotteryState";
 import { DeployLottery } from "~~/components/lottery/DeployLottery";
+import { OpenBets } from "~~/components/lottery/OpenBets";
 import { Address } from "~~/components/scaffold-eth";
 
 const Home: NextPage = () => {
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
           </div>
           <DeployLottery></DeployLottery>
           <CheckLotteryState></CheckLotteryState>
+          <OpenBets></OpenBets>
         </div>
       </div>
     </>
