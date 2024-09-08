@@ -1,10 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import type { NextPage } from "next";
 import { useAccount } from "wagmi";
-import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { BuyTokens } from "~~/components/lottery-dapp/BuyTokens";
+import { ApproveTokens } from "~~/components/lottery/ApproveTokens";
+import { BurnTokens } from "~~/components/lottery/BurnTokens";
+import { BuyTokens } from "~~/components/lottery/BuyTokens";
+import { CheckLotteryState } from "~~/components/lottery/CheckLotteryState";
+import { DeployLottery } from "~~/components/lottery/DeployLottery";
+import { OpenBets } from "~~/components/lottery/OpenBets";
 import { Address } from "~~/components/scaffold-eth";
 
 const Home: NextPage = () => {
@@ -22,23 +25,12 @@ const Home: NextPage = () => {
             <p className="my-2 font-medium">Connected Address:</p>
             <Address address={connectedAddress} />
           </div>
-          <p className="text-center text-lg">
-            Get started by editing{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/nextjs/app/page.tsx
-            </code>
-          </p>
-          <p className="text-center text-lg">
-            Edit your smart contract{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              YourContract.sol
-            </code>{" "}
-            in{" "}
-            <code className="italic bg-base-300 text-base font-bold max-w-full break-words break-all inline-block">
-              packages/hardhat/contracts
-            </code>
-          </p>
-          <PageBody></PageBody>
+          <DeployLottery></DeployLottery>
+          <CheckLotteryState></CheckLotteryState>
+          <OpenBets></OpenBets>
+          <BuyTokens></BuyTokens>
+          <ApproveTokens></ApproveTokens>
+          <BurnTokens></BurnTokens>
         </div>
       </div>
     </>
