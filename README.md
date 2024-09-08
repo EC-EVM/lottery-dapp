@@ -18,7 +18,7 @@ Created a lottery directory inside packages that houses the contracts
 cd packages/lottery
 npx hardhat compile  
 ```
-this will generate the artifacts folder that you can call in your scripts ie:
+this will generate the artifacts folder that you can call in your scripts ie:<br />
 import { abi } from "../artifacts/contracts/Lottery.sol/Lottery.json";
 
 
