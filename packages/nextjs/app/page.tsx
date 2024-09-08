@@ -2,6 +2,7 @@
 
 import type { NextPage } from "next";
 import { useAccount } from "wagmi";
+import { ApproveTokens } from "~~/components/lottery/ApproveTokens";
 import { BuyTokens } from "~~/components/lottery/BuyTokens";
 import { CheckLotteryState } from "~~/components/lottery/CheckLotteryState";
 import { DeployLottery } from "~~/components/lottery/DeployLottery";
@@ -27,6 +28,7 @@ const Home: NextPage = () => {
           <CheckLotteryState></CheckLotteryState>
           <OpenBets></OpenBets>
           <BuyTokens></BuyTokens>
+          <ApproveTokens></ApproveTokens>
         </div>
       </div>
     </>
