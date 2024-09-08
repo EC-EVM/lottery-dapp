@@ -6,6 +6,7 @@ import { ApproveTokens } from "~~/components/lottery/ApproveTokens";
 import { BurnTokens } from "~~/components/lottery/BurnTokens";
 import { BuyTokens } from "~~/components/lottery/BuyTokens";
 import { CheckLotteryState } from "~~/components/lottery/CheckLotteryState";
+import { CloseBets } from "~~/components/lottery/CloseBets";
 import { DeployLottery } from "~~/components/lottery/DeployLottery";
 import { OpenBets } from "~~/components/lottery/OpenBets";
 import { Address } from "~~/components/scaffold-eth";
@@ -28,6 +29,7 @@ const Home: NextPage = () => {
           <DeployLottery></DeployLottery>
           <CheckLotteryState></CheckLotteryState>
           <OpenBets></OpenBets>
+          <CloseBets></CloseBets>
           <BuyTokens></BuyTokens>
           <ApproveTokens></ApproveTokens>
           <BurnTokens></BurnTokens>
