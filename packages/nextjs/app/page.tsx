@@ -50,7 +50,7 @@ function PageBody() {
     <>
       <p className="text-center text-lg"></p>
       <WalletInfo></WalletInfo>
-      <BuyTokens></BuyTokens>
+      {/* <BuyTokens></BuyTokens> */}
     </>
   );
 }
