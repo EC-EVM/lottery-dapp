@@ -37,4 +37,56 @@ const Home: NextPage = () => {
   );
 };
 
+function PageBody() {
+  return (
+    <>
+      <p className="text-center text-lg"></p>
+      <WalletInfo></WalletInfo>
+      {/* <BuyTokens></BuyTokens> */}
+    </>
+  );
+}
+
+function WalletInfo() {
+  const { address, isConnecting, isDisconnected, chain } = useAccount();
+  if (address)
+    return (
+      <div>
+        <p>Your account address is {address}</p>
+
+        <p>Connected to the network {chain?.name}</p>
+        {/*
+        <WalletAction></WalletAction>
+        <WalletBalance address={address as `0x${string}`}></WalletBalance>
+
+        <TokenInfo address={address as `0x${string}`}></TokenInfo>
+        */}
+        {/*
+        <ApiData address={address as `0x${string}`}></ApiData>
+        <DelegateVotes address={address as `0x${string}`}></DelegateVotes>
+        <DeployTokenizedBallot></DeployTokenizedBallot>
+        <CastVotes></CastVotes>
+        <ViewVotes></ViewVotes>
+        */}
+      </div>
+    );
+  if (isConnecting)
+    return (
+      <div>
+        <p>Loading...</p>
+      </div>
+    );
+  if (isDisconnected)
+    return (
+      <div>
+        <p>Wallet disconnected. Connect wallet to continue</p>
+      </div>
+    );
+  return (
+    <div>
+      <p>Connect wallet to continue</p>
+    </div>
+  );
+}
+
 export default Home;
