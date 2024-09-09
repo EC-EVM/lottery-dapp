@@ -7,9 +7,13 @@ import { BetTokens } from "~~/components/lottery/BetTokens";
 import { BurnTokens } from "~~/components/lottery/BurnTokens";
 import { BuyTokens } from "~~/components/lottery/BuyTokens";
 import { CheckLotteryState } from "~~/components/lottery/CheckLotteryState";
+import { CheckOwnerPool } from "~~/components/lottery/CheckOwnerPool";
+import { CheckPrize } from "~~/components/lottery/CheckPrize";
 import { CloseBets } from "~~/components/lottery/CloseBets";
+import { CollectPrize } from "~~/components/lottery/CollectPrize";
 import { DeployLottery } from "~~/components/lottery/DeployLottery";
 import { OpenBets } from "~~/components/lottery/OpenBets";
+import { WithdrawOwnerPool } from "~~/components/lottery/WithdrawOwnerPool";
 import { Address } from "~~/components/scaffold-eth";
 
 const Home: NextPage = () => {
@@ -35,6 +39,10 @@ const Home: NextPage = () => {
           <ApproveTokens></ApproveTokens>
           <BurnTokens></BurnTokens>
           <BetTokens></BetTokens>
+          <CheckPrize></CheckPrize>
+          <CollectPrize></CollectPrize>
+          <CheckOwnerPool></CheckOwnerPool>
+          <WithdrawOwnerPool></WithdrawOwnerPool>
         </div>
       </div>
     </>

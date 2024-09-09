@@ -3,15 +3,15 @@ import { abi } from "../../../lottery/artifacts/contracts/Lottery.sol/Lottery.js
 import { parseEther } from "viem";
 import { useWriteContract } from "wagmi";
 
-export const BetTokens = () => {
+export const WithdrawOwnerPool = () => {
   const [lotteryAddress, setLotteryAddress] = useState("");
-  const [count, setCount] = useState(1);
+  const [amount, setAmount] = useState("1");
 
   const { data, isError, error, isPending, isSuccess, writeContract } = useWriteContract();
   return (
     <div className="card w-96 bg-primary text-primary-content mt-4">
       <div className="card-body">
-        <h2 className="card-title">Bet Tokens</h2>
+        <h2 className="card-title">Withdraw Owner Pool</h2>
 
         <div className="form-control w-full max-w-xs my-4">
           <label className="label">
@@ -28,14 +28,14 @@ export const BetTokens = () => {
 
         <div className="form-control w-full max-w-xs my-4">
           <label className="label">
-            <span className="label-text">Enter the count:</span>
+            <span className="label-text">Amount to withdraw:</span>
           </label>
           <input
             type="text"
-            placeholder="2"
+            placeholder="0x...."
             className="input input-bordered w-full max-w-xs"
-            value={count}
-            onChange={e => setCount(Number(e.target.value))}
+            value={amount}
+            onChange={e => setAmount(e.target.value)}
           />
         </div>
 
@@ -46,12 +46,12 @@ export const BetTokens = () => {
             writeContract({
               abi: abi,
               address: lotteryAddress,
-              functionName: "betMany",
-              args: [BigInt(count)],
+              functionName: "ownerWithdraw",
+              args: [parseEther(amount)],
             });
           }}
         >
-          Bet
+          Collect
         </button>
         {isSuccess && (
           <div>
@@ -61,7 +61,7 @@ export const BetTokens = () => {
             </a>
           </div>
         )}
-        {isError && <div>Error betting: {error.message}</div>}
+        {isError && <div>Error collecting: {error.message}</div>}
       </div>
     </div>
   );
